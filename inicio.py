@@ -1,29 +1,13 @@
-from calculadora import calculadora
-
-
-
-def criarArquivo(nome):
-    try:
-        arq = open(nome, "x")
-    except:
-        print("Erro ao criar novo arquivo!")
-
-def lerArquivo(arquivo):
-    f = open(arquivo, "r", -1, "utf-8")
-    print(f.read())
-
-def editarArquivo(arquivo, txt):
-    arquivo = open(arquivo, "a", -1, "utf-8")
-    arquivo.write(txt)
-    arquivo.close()
+from calculadora.calculadora import calculadora
+import mouse
+from arquivo import arquivo
 
 while True:
     menuInicio = """
     Menu:
     A - Calculadora
-    B - Criar Arquivo
-    C - Ler arquivo
-    D - Editar Arquivo
+    B - Arquivo
+    E - Desenhar um espiral no Paint
     X - Sair
     """
     print(menuInicio)
@@ -34,19 +18,10 @@ while True:
             calculadora()
 
         case ("B"):
-            nome = input("Informe o nome do arquivo: ")
-            criarArquivo(nome)
-            print("Arquivo criado com sucesso!")
+            arquivo.start()
 
-        case ("C"):
-            nome = input("Informe o nome do arquivo: ")
-            lerArquivo(nome)
-
-        case ("D"):
-            nome = input("Informe o nome do arquivo: ")
-            txt = input("Informe o texto que deve ser inserido: \n")
-
-            editarArquivo(nome, txt)
+        case ("E"):
+            mouse.draw()
 
         case ("X"):
             print("Saindo...")

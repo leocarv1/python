@@ -21,7 +21,7 @@ def divisao(x, y):
         print("Erro")
 
 def save(txt):
-    txtArquivo = open("historico.txt", "a", -1, "utf-8")
+    txtArquivo = open("calculadora/historico.txt", "a", -1, "utf-8")
     txtArquivo.write(txt)
     txtArquivo.close()
 
